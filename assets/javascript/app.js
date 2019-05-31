@@ -1,19 +1,31 @@
 $(function() {
 
-const topics = ["World of Warcraft", "Settlers of Catan", "Twilight Imperium", "Warhammer 40k", "Munchkin", "Super Smash Bros.", "The Legend of Zelda", "Star Fox",];
+const topics = ["World of Warcraft", "Settlers of Catan", "Twilight Imperium", "Warhammer 40k", "Munchkin", "Super Smash Bros.", "The Legend of Zelda", "Star Fox", "Mountains", "Music", "Books"];
 
-// for (var i = 0; i < topics.length; i++)
+// generates button from items in array on load 
+function gifButtons() {
 $.each(topics, function (i) { 
-    var topicBtn = $("<button>"+ topics[i] + "</button>");
-    topicBtn.addClass("btn btn-dark mb-2")
+    var topicBtn = $(`<button> ${topics[i]} </button>`);
+    topicBtn.addClass("gif-btn btn btn-dark mb-2")
+    topicBtn.attr("btn-topics", topics[i]);
     $("#thing-btn").append(topicBtn);
   });
+};
+
+gifButtons();
+
+//generating new button on sumbit
+
+// $("#add-thing").click(function() {
+
+// }
 
 
-$("#add-thing").on("click", function() {
+//generating gif on button click
+$(".gif-btn").click(function() {
 
-    var thing = $(this).attr("data-person");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=NPUUBuc8aRDejugI9RNTcyhKIXuC1B95&limit=10";
+    var buttonTopic = $(this).attr("btn-topics");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonTopic + "&api_key=NPUUBuc8aRDejugI9RNTcyhKIXuC1B95&limit=10";
 
 
     $.ajax({
@@ -21,7 +33,20 @@ $("#add-thing").on("click", function() {
       method: "GET"
     }) .then(function(response) {
 
-        
+        var results = response.data;
+
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+              var gifDiv = $("<div>");
+              var rating = results[i].rating;
+              var p = $("<p>").text("Rating: " + rating);
+              var thingGif = $("<img>");
+              thingGif.attr("src", results[i].images.fixed_height.url);
+              gifDiv.append(p);
+              gifDiv.append(thingGif);
+              $("#gif-space").prepend(gifDiv);
+            }
+        }
       });
   });
 
