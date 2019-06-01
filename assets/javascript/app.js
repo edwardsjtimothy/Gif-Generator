@@ -54,9 +54,9 @@ $(function () {
           var p = $("<p>").text("Rating: " + rating);
           var thingGif = $("<img>");
           thingGif.attr("id", "gif-to-click");
-          thingGif.attr("src", results[i].images.original_still.url);
-          thingGif.attr("data-still", results[i].images.original_still.url);
-          thingGif.attr("data-animate", results[i].images.original.url);
+          thingGif.attr("src", results[i].images.fixed_height_still.url);
+          thingGif.attr("data-still", results[i].images.fixed_height_still.url);
+          thingGif.attr("data-animate", results[i].images.fixed_width.url);
           thingGif.attr("data-state", "stop");
           gifDiv.append(p);
           gifDiv.append(thingGif);
