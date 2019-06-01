@@ -1,24 +1,28 @@
 $(function() {
+  var topics = ["World of Warcraft", "Settlers of Catan", "Twilight Imperium", "Warhammer 40k", "Munchkin", "Super Smash Bros.", "The Legend of Zelda", "Star Fox", "Mountains", "Music", "Books"];
 
-const topics = ["World of Warcraft", "Settlers of Catan", "Twilight Imperium", "Warhammer 40k", "Munchkin", "Super Smash Bros.", "The Legend of Zelda", "Star Fox", "Mountains", "Music", "Books"];
+  // generates button from items in array on load 
+  function gifButtons() {
+    $.each(topics, function (i) { 
+      var topicBtn = $(`<button> ${topics[i]} </button>`);
+      topicBtn.addClass("gif-btn btn btn-dark mb-2")
+      topicBtn.attr("btn-topics", topics[i]);
+      $("#thing-btn").append(topicBtn);
+    });
+  };
 
-// generates button from items in array on load 
-function gifButtons() {
-$.each(topics, function (i) { 
-    var topicBtn = $(`<button> ${topics[i]} </button>`);
-    topicBtn.addClass("gif-btn btn btn-dark mb-2")
-    topicBtn.attr("btn-topics", topics[i]);
-    $("#thing-btn").append(topicBtn);
-  });
-};
+  gifButtons();
 
-gifButtons();
+    //generating new button on sumbit
 
-//generating new button on sumbit
+    $("#add-thing").click(function(event) {
+        event.preventDefault();  
+        var newBtn = $(".new-btn-create").val().trim();  
+        topics.push(newBtn);
+        console.log(topics);
+        
 
-// $("#add-thing").click(function() {
-
-// }
+    });
 
 
 //generating gif on button click

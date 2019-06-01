@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets\css\style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="assets\javascript\app.js"></script>
     <title>Gif Generator</title>
 </head>
+
 <body>
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Gif Generator</h1>
-                <p class="lead">Type in something you like and hit submit to add a new button. Click the button to generate
+                <p class="lead">Type in something you like and hit submit to add a new button. Click the button to
+                    generate
                     gifs!</p>
                 <hr class="my-4">
                 <form>
                     <div class="form-row align-items-center">
                         <div class="col-auto">
                             <label class="sr-only" for="inlineFormInput">Name</label>
-                            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Write a thing!">
+                            <input type="text" class="new-btn-create form-control mb-2" id="inlineFormInput"
+                                placeholder="Write a thing!">
                         </div>
                         <div class="col-auto">
                             <button type="submit" id="add-thing" class="btn btn-primary mb-2">Submit</button>
@@ -35,7 +40,7 @@
     <div class="container">
         <div class="row">
             <div id="thing-btn" class="col-3 col-sm-3 col-md-3 col-lg-3">
-                <!-- buttons go here --> 
+                <!-- buttons go here -->
             </div>
 
             <div id="gif-space" class="col-9 col-sm-9 col-md-9 col-lg-9">
