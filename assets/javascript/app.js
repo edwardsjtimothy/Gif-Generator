@@ -58,8 +58,8 @@ $(function () {
           thingGif.attr("data-still", results[i].images.fixed_height_still.url);
           thingGif.attr("data-animate", results[i].images.fixed_width.url);
           thingGif.attr("data-state", "stop");
-          gifDiv.append(p);
           gifDiv.append(thingGif);
+          gifDiv.append(p);
           $("#gif-space").prepend(gifDiv);
         }
       }
