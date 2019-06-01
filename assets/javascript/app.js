@@ -28,21 +28,20 @@ $(function () {
     event.preventDefault();
     var newBtn = $(".new-btn-create").val().trim();
     topics.push(newBtn);
-    $(".new-button-create").val("");
     newGifButtons()
   });
 
 
   //generating gif on button click
-  $(".gif-btn").click(function () {
+  $(document).on("click", ".gif-btn", function () {
 
     var buttonTopic = $(this).attr("btn-topics");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonTopic + "&api_key=NPUUBuc8aRDejugI9RNTcyhKIXuC1B95&limit=10";
-
+    console.log(queryURL)
 
     $.ajax({
       url: queryURL,
-      method: "GET"
+      method: "GET",
     }).then(function (response) {
 
       var results = response.data;
@@ -59,7 +58,7 @@ $(function () {
           $("#gif-space").prepend(gifDiv);
         }
       }
-    });
+    })
   });
 
   //each item in topics array should have a button generated on load
