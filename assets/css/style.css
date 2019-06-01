@@ -1,3 +1,13 @@
+body {
+    background-image: url(../images/bananas.png)
+}
+
 .btn-dark {
     margin-right: 10px;
 }
+
+.jumbotron {
+    background: darkslategrey;
+    color: white;
+}
+
