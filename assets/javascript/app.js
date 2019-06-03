@@ -56,7 +56,7 @@ $(function () {
           thingGif.attr("id", "gif-to-click");
           thingGif.attr("src", results[i].images.fixed_height_still.url);
           thingGif.attr("data-still", results[i].images.fixed_height_still.url);
-          thingGif.attr("data-animate", results[i].images.fixed_width.url);
+          thingGif.attr("data-animate", results[i].images.fixed_height.url);
           thingGif.attr("data-state", "stop");
           gifDiv.append(thingGif);
           gifDiv.append(p);
